@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  jupyter:
+    # image: jupyter/scipy-notebook:python-3.10.11
+    image: rjurney/netography-jupyter:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: netography-jupyter
+    ports:
+      - 8889:8889
+    volumes:
+      - .:/home/jovyan/work
+      - ./data:/home/jovyan/data
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_PORT=8889
+    env_file:
+      - envs/wandb.env
+      - .env
+    restart: always
