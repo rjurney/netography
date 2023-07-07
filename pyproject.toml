@@ -1,10 +1,29 @@
 [tool.poetry]
-name = "netography"
+name = "netography-iot-anomaly"
 version = "0.0.2"
 description = "This project is a coding challenge from Netography assigned to candidate Russell Jurney."
 authors = ["Russell Jurney <russell.jurney@gmail.com>"]
+packages = [
+    { include = "netography_iot_anomaly" }
+]
 license = "MIT"
 readme = "README.md"
+homepage = "https://linkedin.com/in/russelljurney"
+repository = "https://github.com/rjurney/netography"
+keywords = [
+    "anomaly",
+    "detection",
+    "anomaly detection",
+    "iot",
+    "netography",
+    "cyber",
+    "security",
+    "cybersecurity",
+    "netflow",
+    "networks",
+    "intrusion",
+    "intrusion detection"
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -15,7 +34,27 @@ black = "^23.3.0"
 isort = "^5.12.0"
 pre-commit = "^3.3.3"
 mypy = "^1.4.1"
+ipython = "^8.14.0"
+jupyter = "^1.0.0"
+nbdime = "^3.2.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = ['netography_iot_anomaly', 'tests']
+
+[tool.isort]
+profile = "black"
+src_paths = ["netography_iot_anomaly", "tests"]
+
+[tool.mypy]
+python_version = "3.10"
+mypy_path = ["netography_iot_anomaly", "tests"]
+warn_return_any = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true

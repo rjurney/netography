@@ -45,9 +45,18 @@ aws-cli/2.12.7 Python/3.11.4 Darwin/22.4.0 exe/x86_64 prompt/off
 
 ### Python 3.10
 
-This project uses Python 3.10.
-
 Netography is a Go shop, but I will be using Python for all phases of this project. The reason for this is that there is a lot to do, so I am deferring learning Go until the onboarding phase of my hiring. I have familiarized myself with Go's features and look forward to doing so :)
+
+#### Anaconda Python
+
+Locally, this project uses [Anaconda Python](https://docs.anaconda.com/free/anaconda/install/index.html) 3.10.11. To create a `conda` environment run:
+
+```bash
+conda create -n netography python=3.11 -y
+aconda activate netography
+```
+
+Then install the poetry dependencies to the `netography` conda environment.
 
 ### Poetry Package Manager
 
@@ -55,6 +64,8 @@ For Python tools I use the [Python Poetry](https://python-poetry.org/) as it mak
 
 * Package configuration is stored in [pyproject.toml](pyproject.toml)
 * Dependencies are stored in [poetry.lock](poetry.lock)
+
+#### Installing Poetry
 
 To install poetry on *nix, use one of the following commands:
 
@@ -73,6 +84,18 @@ or on Windows:
 ```powershell
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 ```
+
+#### Installing Dependencies
+
+To install dependencies, run:
+
+```bash
+poetry install
+```
+
+### VSCode Editor
+
+You can use any editor, but there are common settings for VSCode in [.vscode/settings.json](.vscode/settings.json) that should be automatically picked up by VSCode.
 
 ## Project Dataset
 
