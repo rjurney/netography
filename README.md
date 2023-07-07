@@ -1,6 +1,6 @@
-<center><img src="images/netography_logo_white.png" alt="Negography logo, white background" /></center>
-
 # Netography Interview Project
+
+<center><img src="images/netography_logo_white.png" alt="Netography logo, white background" width="500px" /></center>
 
 This project is a coding challenge from Netography assigned to candidate Russell Jurney.
 
