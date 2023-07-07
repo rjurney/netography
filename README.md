@@ -49,6 +49,31 @@ This project uses Python 3.10.
 
 Netography is a Go shop, but I will be using Python for all phases of this project. The reason for this is that there is a lot to do, so I am deferring learning Go until the onboarding phase of my hiring. I have familiarized myself with Go's features and look forward to doing so :)
 
+### Poetry Package Manager
+
+For Python tools I use the [Python Poetry](https://python-poetry.org/) as it makes things easy and reproducible.
+
+* Package configuration is stored in [pyproject.toml](pyproject.toml)
+* Dependencies are stored in [poetry.lock](poetry.lock)
+
+To install poetry on *nix, use one of the following commands:
+
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
+
+or
+
+```bash
+pip install poetry
+```
+
+or on Windows:
+
+```powershell
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+```
+
 ## Project Dataset
 
 ...

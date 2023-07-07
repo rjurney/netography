@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "netography"
+version = "0.0.2"
+description = "This project is a coding challenge from Netography assigned to candidate Russell Jurney."
+authors = ["Russell Jurney <russell.jurney@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
