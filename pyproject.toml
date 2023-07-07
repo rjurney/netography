@@ -27,6 +27,7 @@ keywords = [
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pandas = "^2.0.3"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
@@ -37,6 +38,7 @@ mypy = "^1.4.1"
 ipython = "^8.14.0"
 jupyter = "^1.0.0"
 nbdime = "^3.2.1"
+pandas-stubs = "^2.0.2.230605"
 
 [build-system]
 requires = ["poetry-core"]
