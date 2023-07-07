@@ -33,7 +33,17 @@ The classifier should be able to generate robust classification metrics on a hel
 >
 > -Dave
 
-## Language: Python
+## Tools and Languages
+
+### AWS CLI v2
+
+AWS CLI v1 may have issues running the commands. You should [upgrade from v1 to v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#getting-started-install-instructions).
+
+```bash
+aws-cli/2.12.7 Python/3.11.4 Darwin/22.4.0 exe/x86_64 prompt/off
+```
+
+### Python 3.10
 
 This project uses Python 3.10.
 
