@@ -147,7 +147,6 @@ I will extend the AWS network and SageMaker notebook setup from steps 1 and 2 to
 
 <p align="left">
     <img src="images/russell_jurney_headshot.jpg" width="200px" alt="A bald man in a nice shirt smiles at you. You feel wonderful!" />
-</p>
 
 My name is [Russell Jurney](https://linkedin.com/in/russelljurney). I work at the intersection of big data, large networks, representation learning, NLP and search. Lately I play with LLMs like everyone else.
 
@@ -156,3 +155,5 @@ I am looking for a job. In the meantime I run a consultancy called Graphlet AI f
 I am a startup product and engineering executive focused on building products driven by billion node+ networks using artificial intelligence (AI). I have worked at places like Ning, LinkedIn and Hortonworks. I co-founded Deep Discovery to use networks, GNNs and network visualization to build an explainable risk score for KYC / AML. In the end I developed business network risk motifs on our 3 billion node, 2.2 billion edge network.
 
 I am a four-time O'Reilly author with 124 citations on Google Scholar for being the first to write about “agile data science” - agile development as applied to data science and machine learning. I am an applied researcher and product manager with 17 years of experience building and shipping data-driven products. I do network science, machine learning, NLP and search so I can get stuff done :)
+
+</p>
