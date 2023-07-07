@@ -148,7 +148,7 @@ I will extend the AWS network and SageMaker notebook setup from steps 1 and 2 to
 <p align="left">
     <a href="https://linkedin.com/in/russelljurney">
         <img align="left" src="images/russell_jurney_headshot.jpg" width="200px" alt="A bald man in a nice shirt smiles at you. You feel wonderful!"
-    style="margin-right: 15px; margin-bottom: 15px;" />
+    style="margin-right: 15px; padding-bottom: 15px;" />
     </a>
 </p>
 
