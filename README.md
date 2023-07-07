@@ -148,6 +148,7 @@ I will extend the AWS network and SageMaker notebook setup from steps 1 and 2 to
 <p align="left">
     <img src="images/russell_jurney_headshot.jpg" width="200px" alt="A bald man in a nice shirt smiles at you. You feel wonderful!" />
 </p>
+
 My name is [Russell Jurney](https://linkedin.com/in/russelljurney). I work at the intersection of big data, large networks, representation learning, NLP and search. Lately I play with LLMs like everyone else.
 
 I am looking for a job. In the meantime I run a consultancy called Graphlet AI focused on knowledge graphs and Large Language Models (LLMs). You can learn more about my work by viewing my [graph AI portfolio](https://bit.ly/rjurney_portfolio).
