@@ -33,7 +33,27 @@ The classifier should be able to generate robust classification metrics on a hel
 >
 > -Dave
 
+## Project Dataset
+
+The dataset is a GZip compressed CSV file. Parquet files perform much better at the scale of this dataset, so I converted it to Parquet format in [netography_iot_anomaly/csv_to_parquet.py](netography_iot_anomaly/csv_to_parquet.py).
+
+The original CSV/GZip files are:
+
+```bash
+data/ml-engineer-main/IoT network intrustion dataset test.csv.gz
+data/ml-engineer-main/IoT network intrustion dataset train.csv.gz
+```
+
+The resulting Parquet files are:
+
+```bash
+data/ml-engineer-main/iot_network_intrusion_dataset_test.parquet
+data/ml-engineer-main/iot_network_intrusion_dataset_train.parquet
+```
+
 ## Tools and Languages
+
+Development started locally and then moved into SageMaker. The tools and languages used follow.
 
 ### AWS CLI v2
 
@@ -42,6 +62,17 @@ AWS CLI v1 may have issues running the commands. You should [upgrade from v1 to 
 ```bash
 aws-cli/2.12.7 Python/3.11.4 Darwin/22.4.0 exe/x86_64 prompt/off
 ```
+
+### Docker
+
+Docker is used to build a notebook container for local work and the SageMaker container(s). The Dockerfile is in [netography_iot_anomaly/Dockerfile](netography_iot_anomaly/Dockerfile). It is orchestrated locally using [docker-compose.yml](docker-compose.yml).
+
+```bash
+docker compose up -d
+docker logs netography-jupyter -f --tail 100
+```
+
+You will see the URL to connect to with an access token provided in the logs.
 
 ### Python 3.10
 
@@ -57,6 +88,14 @@ aconda activate netography
 ```
 
 Then install the poetry dependencies to the `netography` conda environment.
+
+### Pre-Commit
+
+Code must pass `flake8`, `black`, `isort` and `mypy` checks before being committed. This is enforced using [pre-commit](https://pre-commit.com/). To install pre-commit into your local Git repository, run:
+
+```bash
+pre-commit install
+```
 
 ### Poetry Package Manager
 
@@ -96,10 +135,6 @@ poetry install
 ### VSCode Editor
 
 You can use any editor, but there are common settings for VSCode in [.vscode/settings.json](.vscode/settings.json) that should be automatically picked up by VSCode.
-
-## Project Dataset
-
-...
 
 ## Project Structure
 
