@@ -1,7 +1,9 @@
 # Netography Interview Project
 
 <p align="center">
-    <img src="images/netography_logo_white.png" alt="Netography logo, white background" width="500px" />
+    <a href="https://netography.com">
+        <img src="images/netography_logo_white.png" alt="Netography logo, white background" width="500px" />
+    </a>
 </p>
 
 This project is a coding challenge from Netography assigned to candidate Russell Jurney.
@@ -12,7 +14,7 @@ This email was received from David Meltzer on July 6, 2023 at 8:59AM PST. I bega
 
 > Hi Russell,
 >
-> As I mentioned last week, the challenge is the last step in our interview process.  I have provided the instructions below, but if you need any clarification or have problems with how we have defined this, please let us know.  To the extent you incur any AWS costs as part of this, we will reimburse you.  There is no fixed deadline for this, but we are hoping to have it back within the next week or so to be able to make a decision.  
+> As I mentioned last week, the challenge is the last step in our interview process.  I have provided the instructions below, but if you need any clarification or have problems with how we have defined this, please let us know.  To the extent you incur any AWS costs as part of this, we will reimburse you.  There is no fixed deadline for this, but we are hoping to have it back within the next week or so to be able to make a decision.
 >
 > ----
 >
@@ -83,8 +85,8 @@ Netography is a Go shop, but I will be using Python for all phases of this proje
 Locally, this project uses [Anaconda Python](https://docs.anaconda.com/free/anaconda/install/index.html) 3.10.11. To create a `conda` environment run:
 
 ```bash
-conda create -n netography python=3.11 -y
-aconda activate netography
+conda create -n netography python=3.10 -y
+conda activate netography
 ```
 
 Then install the poetry dependencies to the `netography` conda environment.
