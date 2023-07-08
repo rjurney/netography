@@ -12,7 +12,7 @@ This email was received from David Meltzer on July 6, 2023 at 8:59AM PST. I bega
 
 > Hi Russell,
 >
-> As I mentioned last week, the challenge is the last step in our interview process.  I have provided the instructions below, but if you need any clarification or have problems with how we have defined this, please let us know.  To the extent you incur any AWS costs as part of this, we will reimburse you.  There is no fixed deadline for this, but we are hoping to have it back within the next week or so to be able to make a decision.  
+> As I mentioned last week, the challenge is the last step in our interview process.  I have provided the instructions below, but if you need any clarification or have problems with how we have defined this, please let us know.  To the extent you incur any AWS costs as part of this, we will reimburse you.  There is no fixed deadline for this, but we are hoping to have it back within the next week or so to be able to make a decision.
 >
 > ----
 >
@@ -84,7 +84,7 @@ Locally, this project uses [Anaconda Python](https://docs.anaconda.com/free/anac
 
 ```bash
 conda create -n netography python=3.11 -y
-aconda activate netography
+conda activate netography
 ```
 
 Then install the poetry dependencies to the `netography` conda environment.
