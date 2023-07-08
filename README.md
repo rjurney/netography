@@ -158,6 +158,8 @@ When time permits, I like to setup my infrastructure using DevOps principles fro
 
 I have a dual GPU deep learning machine at home but there is overlap between SageMaker notebook setup and the MLOps profile for model deployment.
 
+I started with the template for `us-west-2` for [`VPC_With_PublicIPs_And_DNS.template`](https://s3.us-west-2.amazonaws.com/cloudformation-templates-us-west-2/VPC_With_PublicIPs_And_DNS.template). It was in JSON, so I converted it to YAML. The result is [cloudformation/vpc.yaml](cloudformation/vpc.yaml).
+
 ### 3. Exploratory Data Analysis
 
 I can't model what I don't understand. In this phase I will explore the data to determine how best to model it.
