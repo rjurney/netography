@@ -83,7 +83,7 @@ Netography is a Go shop, but I will be using Python for all phases of this proje
 Locally, this project uses [Anaconda Python](https://docs.anaconda.com/free/anaconda/install/index.html) 3.10.11. To create a `conda` environment run:
 
 ```bash
-conda create -n netography python=3.11 -y
+conda create -n netography python=3.10 -y
 conda activate netography
 ```
 
