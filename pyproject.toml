@@ -40,6 +40,8 @@ ipython = "^8.14.0"
 jupyter = "^1.0.0"
 nbdime = "^3.2.1"
 pandas-stubs = "^2.0.2.230605"
+jq = "^1.4.1"
+yq = "^3.2.2"
 
 [build-system]
 requires = ["poetry-core"]
