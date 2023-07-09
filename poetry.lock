@@ -130,6 +130,19 @@ html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
+name = "beautysh"
+version = "6.2.1"
+description = "A Bash beautifier for the masses."
+category = "dev"
+optional = false
+python-versions = ">=3.6.2,<4.0.0"
+
+[package.dependencies]
+colorama = ">=0.4.4,<0.5.0"
+types-colorama = ">=0.4.3,<0.5.0"
+types-setuptools = ">=57.4.0,<58.0.0"
+
+[[package]]
 name = "black"
 version = "23.3.0"
 description = "The uncompromising code formatter."
@@ -1567,9 +1580,25 @@ docs = ["myst-parser", "pydata-sphinx-theme", "sphinx"]
 test = ["argcomplete (>=2.0)", "pre-commit", "pytest", "pytest-mock"]
 
 [[package]]
+name = "types-colorama"
+version = "0.4.15.11"
+description = "Typing stubs for colorama"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "types-pytz"
 version = "2023.3.0.0"
 description = "Typing stubs for pytz"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "types-setuptools"
+version = "57.4.18"
+description = "Typing stubs for setuptools"
 category = "dev"
 optional = false
 python-versions = "*"
@@ -1721,7 +1750,7 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "37172c1df5c7b55bc5419f7a8c78fc46987fc28069f2421357bc7c12ac6a7e07"
+content-hash = "2fa87a170468694f3c241c10629dbfe32219ea633168fb8bb33b7cdc493c6309"
 
 [metadata.files]
 anyio = [
@@ -1782,6 +1811,10 @@ backcall = [
 beautifulsoup4 = [
     {file = "beautifulsoup4-4.12.2-py3-none-any.whl", hash = "sha256:bd2520ca0d9d7d12694a53d44ac482d181b4ec1888909b035a3dbf40d0f57d4a"},
     {file = "beautifulsoup4-4.12.2.tar.gz", hash = "sha256:492bbc69dca35d12daac71c4db1bfff0c876c00ef4a2ffacce226d4638eb72da"},
+]
+beautysh = [
+    {file = "beautysh-6.2.1-py3-none-any.whl", hash = "sha256:8c7d9c4f2bd02c089194218238b7ecc78879506326b301eba1d5f49471a55bac"},
+    {file = "beautysh-6.2.1.tar.gz", hash = "sha256:423e0c87cccf2af21cae9a75e04e0a42bc6ce28469c001ee8730242e10a45acd"},
 ]
 black = [
     {file = "black-23.3.0-cp310-cp310-macosx_10_16_arm64.whl", hash = "sha256:0945e13506be58bf7db93ee5853243eb368ace1c08a24c65ce108986eac65915"},
@@ -2808,9 +2841,17 @@ traitlets = [
     {file = "traitlets-5.9.0-py3-none-any.whl", hash = "sha256:9e6ec080259b9a5940c797d58b613b5e31441c2257b87c2e795c5228ae80d2d8"},
     {file = "traitlets-5.9.0.tar.gz", hash = "sha256:f6cde21a9c68cf756af02035f72d5a723bf607e862e7be33ece505abf4a3bad9"},
 ]
+types-colorama = [
+    {file = "types-colorama-0.4.15.11.tar.gz", hash = "sha256:a9421eb24d9cfc584880dc1d33b7fd406a14227c1f99f50c5ab9265e04d07638"},
+    {file = "types_colorama-0.4.15.11-py3-none-any.whl", hash = "sha256:d1e37571a19e152c930b3e789c316e9332e51a43bfcd4470b98225be974fb90c"},
+]
 types-pytz = [
     {file = "types-pytz-2023.3.0.0.tar.gz", hash = "sha256:ecdc70d543aaf3616a7e48631543a884f74205f284cefd6649ddf44c6a820aac"},
     {file = "types_pytz-2023.3.0.0-py3-none-any.whl", hash = "sha256:4fc2a7fbbc315f0b6630e0b899fd6c743705abe1094d007b0e612d10da15e0f3"},
+]
+types-setuptools = [
+    {file = "types-setuptools-57.4.18.tar.gz", hash = "sha256:8ee03d823fe7fda0bd35faeae33d35cb5c25b497263e6a58b34c4cfd05f40bcf"},
+    {file = "types_setuptools-57.4.18-py3-none-any.whl", hash = "sha256:9660b8774b12cd61b448e2fd87a667c02e7ec13ce9f15171f1d49a4654c4df6a"},
 ]
 typing-extensions = [
     {file = "typing_extensions-4.7.1-py3-none-any.whl", hash = "sha256:440d5dd3af93b060174bf433bccd69b0babc3b15b1a8dca43789fd7f61514b36"},

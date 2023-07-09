@@ -28,3 +28,11 @@ repos:
         language: python
         types: [python]
         exclude: tests
+  - repo: local
+    hooks:
+      - id: beautysh
+        name: beautysh
+        description: "beautifysh all shell scripts"
+        entry: beautysh
+        language: python
+        types: [shell]

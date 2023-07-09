@@ -42,6 +42,7 @@ nbdime = "^3.2.1"
 pandas-stubs = "^2.0.2.230605"
 jq = "^1.4.1"
 yq = "^3.2.2"
+beautysh = "^6.2.1"
 
 [build-system]
 requires = ["poetry-core"]
