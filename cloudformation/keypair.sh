@@ -32,8 +32,6 @@ case "$ACTION" in
     delete)
         echo "Deleting key pair $KEY_NAME"
         aws ec2 delete-key-pair --color 'on' \
-                                --key-type 'ed25519' \
-                                --key-format 'pem' \
                                 --key-name "$KEY_NAME"
         rm -f "$KEY_NAME.pem"
         echo "Key pair $KEY_NAME deleted"
