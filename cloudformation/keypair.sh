@@ -20,19 +20,21 @@ KEY_NAME=$2
 case "$ACTION" in
     create)
         echo "Creating key pair $KEY_NAME"
-        aws ec2 create-key-pair --color 'on' \
-                                --key-type 'ed25519' \
-                                --key-format 'pem' \
-                                --key-name "$KEY_NAME" \
-                                --query 'KeyMaterial' \
-                                --output text > "$KEY_NAME.pem"
+        aws ec2 create-key-pair \
+            --color 'on' \
+            --key-type 'ed25519' \
+            --key-format 'pem' \
+            --key-name "$KEY_NAME" \
+            --query 'KeyMaterial' \
+            --output text > "$KEY_NAME.pem"
         chmod 400 "$KEY_NAME.pem"
         echo "Key pair $KEY_NAME created and stored in $KEY_NAME.pem"
         ;;
     delete)
         echo "Deleting key pair $KEY_NAME"
-        aws ec2 delete-key-pair --color 'on' \
-                                --key-name "$KEY_NAME"
+        aws ec2 delete-key-pair \
+            --color 'on' \
+            --key-name "$KEY_NAME"
         rm -f "$KEY_NAME.pem"
         echo "Key pair $KEY_NAME deleted"
         ;;
