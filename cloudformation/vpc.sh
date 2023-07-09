@@ -14,12 +14,12 @@ if [[ $# -lt 2 ]]; then
     exit 1
 fi
 
-# Check if the first argument is "create" and no parameters are supplied
-if [[ $1 == "create" && $# -eq 1 ]]; then
-    echo "First argument is 'create' and there are no additional parameters."
-else
-    echo "The conditions are not met."
-fi
+# # Check if the first argument is "create" and no parameters are supplied
+# if [[ $1 == "create" && $# -eq 1 ]]; then
+#     echo "First argument is 'create' and there are no additional parameters."
+# else
+#     echo "The conditions are not met."
+# fi
 
 ACTION=$1
 STACK_NAME=$2
@@ -35,14 +35,25 @@ case "$ACTION" in
             --stack-name "$STACK_NAME" \
             --template-body file://VPC_With_PublicIPs_And_DNS.template.yaml \
             --parameters ParameterKey=SSHLocation,ParameterValue="$MYIP/32"
-        echo "CloudFormation stack $STACK_NAME created"
+        # Check the exit status of the 'aws cloudformation create-stack' command
+        if [[ $? -ne 0 ]]; then
+            echo "Error creating CloudFormation stack $STACK_NAME"
+            exit 1
+        else
+            echo "CloudFormation stack $STACK_NAME created"
+        fi
         ;;
     delete)
         echo "Deleting stack $STACK_NAME"
         aws cloudformation delete-stack \
             --color 'on' \
             --stack-name "$STACK_NAME"
-        echo "CloudFormation stack $STACK_NAME deleted"
+        if [[ $? -ne 0 ]]; then
+            echo "Error deleting CloudFormation stack $STACK_NAME"
+            exit 1
+        else
+            echo "CloudFormation stack $STACK_NAME deleted"
+        fi
         ;;
     *)
         echo "Unknown action $ACTION. Usage: $0 {create|delete} stack-name"
