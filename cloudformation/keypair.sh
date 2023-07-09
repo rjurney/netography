@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 
-# Usage: ./keypair.sh <keypair-name>
-
-# Create a keypair for the EC2 instances
-aws ec2 create-key-pair --color 'on' \
-                        --key-name $1 \
-                        --region 'us-west-2' \
-                        --key-type 'ed25519' \
-                        --key-format 'pem' \
-                        --query 'KeyMaterial' \
-                        --output text > $1.pem
-
-#!/bin/bash
+# Usage: ./keypair.sh {create|delete} keypair-name
 
 # Ensure AWS CLI is installed
 if ! command -v aws &> /dev/null; then
