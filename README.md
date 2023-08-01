@@ -158,8 +158,7 @@ I started with the template for `us-west-2` for [`VPC_With_PublicIPs_And_DNS.tem
 
 ### 2. Setup SageMarker Notebooks
 
-I have a dual GPU deep learning machine at home but there is overlap between SageMaker notebook setup and the MLOps profile for model deployment. I decided to use a SageMaker notebook and worked across the documentation and some examples to create one along with the IAM role required in 
-
+I have a dual GPU deep learning machine at home but there is overlap between SageMaker notebook setup and the MLOps profile for model deployment. I decided to use a SageMaker notebook and worked across the documentation and some examples to extend the VPC CloudFormation template to create a SageMaker Notebook along with the IAM role required.
 
 ### 3. Exploratory Data Analysis
 
