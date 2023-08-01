@@ -33,7 +33,8 @@ case "$ACTION" in
         aws cloudformation create-stack \
             --color 'on' \
             --stack-name "$STACK_NAME" \
-            --template-body file://VPC_With_PublicIPs_And_DNS.template.yaml \
+            --capabilities CAPABILITY_NAMED_IAM \
+            --template-body file://cloudformation/VPC_With_PublicIPs_And_DNS.template.yaml \
             --parameters ParameterKey=SSHLocation,ParameterValue="$MYIP/32"
         # Check the exit status of the 'aws cloudformation create-stack' command
         if [[ $? -ne 0 ]]; then
@@ -47,7 +48,8 @@ case "$ACTION" in
         echo "Deleting stack $STACK_NAME"
         aws cloudformation delete-stack \
             --color 'on' \
-            --stack-name "$STACK_NAME"
+            --stack-name "$STACK_NAME" \
+            --capabilities CAPABILITY_NAMED_IAM
         if [[ $? -ne 0 ]]; then
             echo "Error deleting CloudFormation stack $STACK_NAME"
             exit 1
