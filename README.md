@@ -154,7 +154,7 @@ There are seven phases to this project. I will attempt to perform all seven in t
 
 When time permits, I like to setup my infrastructure using DevOps principles from the beginning of a project. I like CloudFormation for AWS DevOps over Terraform because Terraform has interfaces that vary widely across clouds, creating duplicate work. I am familiar with Terraform but that is not an issue in this project so I chose CloudFormation.
 
-I started with the template for `us-west-2` for [`VPC_With_PublicIPs_And_DNS.template`](https://s3.us-west-2.amazonaws.com/cloudformation-templates-us-west-2/VPC_With_PublicIPs_And_DNS.template). It was in JSON, so I converted it to YAML. The result is [cloudformation/vpc.yaml](cloudformation/vpc.yaml).
+I started with the template for `us-west-2` for [`VPC_With_PublicIPs_And_DNS.template`](https://s3.us-west-2.amazonaws.com/cloudformation-templates-us-west-2/VPC_With_PublicIPs_And_DNS.template). It was in JSON, so I converted it to YAML. The result is [cloudformation/VPC_With_PublicIPs_And_DNS.template.yaml](cloudformation/VPC_With_PublicIPs_And_DNS.template.yaml).
 
 ### 2. Setup SageMarker Notebooks
 
