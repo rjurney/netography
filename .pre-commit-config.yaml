@@ -6,33 +6,49 @@ repos:
         entry: black
         language: system
         types: [python]
-  - repo: local
-    hooks:
       - id: flake8
         name: flake8
         entry: flake8
         language: system
         types: [python]
-  - repo: local
-    hooks:
       - id: isort
         name: isort
         entry: isort
         language: system
         types: [python]
-  - repo: local
-    hooks:
       - id: mypy
         name: mypy
         entry: mypy
         language: python
         types: [python]
         exclude: tests
-  - repo: local
-    hooks:
       - id: beautysh
         name: beautysh
         description: "beautifysh all shell scripts"
         entry: beautysh
         language: python
         types: [shell]
+      - id: check-for-jq
+        name: Check for workable jq
+        language: system
+        entry: |
+          bash -c "which jq"
+      - id: check-for-yq
+        name: Check for workable yq
+        language: system
+        entry: |
+          bash -c "which yq"
+      - id: jq
+        name: jq
+        description: "jq all json files"
+        entry: |
+          jq . -
+        language: system
+        types: [json]
+      - id: yq
+        name: yq
+        description: "yq all yaml files"
+        entry: |
+          yq . -
+        language: system
+        types: [yaml]
