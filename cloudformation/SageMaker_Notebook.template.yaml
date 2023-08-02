@@ -1,0 +1,100 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Basic SageMaker Notebook Setup for Netography Takehome Assignment."
+
+Parameters:
+  GithubSecretArn:
+    Description: ARN of the secret containing the Github token
+    Type: String
+    Default: arn:aws:secretsmanager:eu-north-1:087121496299:secret:rjurney/github/personal_access_token/netography-DD6Stg
+    ConstraintDescription: must be a valid ARN
+
+  NotebookInstanceType:
+    Description: Notebook instance type
+    Type: String
+    Default: ml.g4dn.2xlarge
+    AllowedValues:
+      - ml.r5.xlarge
+      - ml.r5.2xlarge
+      - ml.r5.4xlarge
+      - ml.g4dn.xlarge
+      - ml.g4dn.2xlarge
+      - ml.g4dn.4xlarge
+      - ml.g4dn.8xlarge
+      - ml.g4dn.16xlarge
+
+# SageMaker Resources
+Resources:
+  NotebookS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: "netography-sagemaker-bucket"
+      AccessControl: Private
+      Tags:
+        - Key: Application
+          Value: !Ref AWS::StackName
+        - Key: Network
+          Value: Private
+
+  DefaultRepository:
+    Type: AWS::SageMaker::CodeRepository
+    Properties:
+      CodeRepositoryName: defaultRepo
+      GitConfig:
+        RepositoryUrl: https://github.com/rjurney/netography
+        SecretArn: !Ref GithubSecretArn
+
+  BasicNotebookInstanceLifecycleConfig:
+    Type: "AWS::SageMaker::NotebookInstanceLifecycleConfig"
+    Properties:
+      NotebookInstanceLifecycleConfigName: stopidle
+      OnStart:
+        - Content:
+            Fn::Base64: ! NotebookStartScript
+
+  ExecutionRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      RoleName: "sagemaker-notebook-role"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service:
+                - "sagemaker.amazonaws.com"
+            Action:
+              - "sts:AssumeRole"
+      Path: "/"
+      Policies:
+        - PolicyName: "sagemaker-notebook-policy"
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Action:
+                  - "cloudwatch:PutMetricData"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                  - "logs:CreateLogGroup"
+                  - "logs:DescribeLogStreams"
+                Resource: "*"
+              - Effect: "Allow"
+                Action:
+                  - "s3:GetObject"
+                  - "s3:PutObject"
+                  - "s3:ListBucket"
+                Resource:
+                  - !GetAtt NotebookS3Bucket.Arn
+
+  SageMakerNotebook:
+    Type: AWS::SageMaker::NotebookInstance
+    Properties:
+      # AdditionalCodeRepositories:
+      # - https://github.com/rjurney/netography.git
+      DefaultCodeRepository: !GetAtt DefaultRepository.CodeRepositoryName
+      DirectInternetAccess: Enabled
+      InstanceType: ml.g4dn.2xlarge
+      NotebookInstanceName: netography-notebook
+      RoleArn: !GetAtt ExecutionRole.Arn
+      VolumeSizeInGB: 32
+      LifecycleConfigName: !GetAtt BasicNotebookInstanceLifecycleConfig.NotebookInstanceLifecycleConfigName
