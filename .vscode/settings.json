@@ -4,15 +4,15 @@
         120
     ],
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python",
+        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
-        },
+        }
     },
     "python.languageServer": "Pylance",
     "python.linting.enabled": true,
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "none",
     "isort.args": [
         "--profile",
         "black"
@@ -22,12 +22,12 @@
     "autoDocstring.docstringFormat": "numpy",
     "editor.codeActionsOnSave": {
         "source.fixAll": true,
-        "source.organizeImports": true,
+        "source.organizeImports": true
     },
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "yaml.schemas": {
         "https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json": "${workspaceFolder}/cloudformation/*.template.yaml"
-    },
+    }
 }
