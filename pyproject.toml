@@ -29,6 +29,8 @@ keywords = [
 python = "^3.9"
 pandas = "^2.0.3"
 pyarrow = "^12.0.1"
+boto3 = "^1.28.17"
+requests = "^2.31.0"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
@@ -43,6 +45,9 @@ pandas-stubs = "^2.0.2.230605"
 jq = "^1.4.1"
 yq = "^3.2.2"
 beautysh = "^6.2.1"
+boto3-stubs = "^1.28.17"
+types-requests = "^2.31.0.2"
+types-urllib3 = "^1.26.25.14"
 
 [build-system]
 requires = ["poetry-core"]
