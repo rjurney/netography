@@ -2,6 +2,7 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: "Basic VPC Setup for Netography Takehome Assignment - based on AWS CloudFormation Sample Template VPC_with_PublicIPs_And_DNS."
 
 Parameters:
+
   SSHLocation:
     Description: Lockdown SSH access to the bastion host (default can be accessed from anywhere)
     Type: String
@@ -249,26 +250,6 @@ Resources:
       GroupName: "no-ingress-sg"
       GroupDescription: "Security group with no ingress rule"
       VpcId: !Ref VPC
-
-  # SageMaker Resources
-  NotebookS3Bucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: "netography-sagemaker-bucket"
-      AccessControl: Private
-      Tags:
-        - Key: Application
-          Value: !Ref AWS::StackName
-        - Key: Network
-          Value: Private
-
-  DefaultRepository:
-    Type: AWS::SageMaker::CodeRepository
-    Properties:
-      CodeRepositoryName: defaultRepo
-      GitConfig:
-        RepositoryUrl: https://github.com/rjurney/netography
-        SecretArn: arn:aws:secretsmanager:us-east-1:xxxxxxxx:secret:github-pXnnSg
 
 Outputs:
   VPC:
