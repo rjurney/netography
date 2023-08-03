@@ -93,7 +93,7 @@ Then install the poetry dependencies to the `netography` conda environment.
 
 ### Pre-Commit
 
-Code must pass `flake8`, `black`, `isort` and `mypy` checks before being committed. This is enforced using [pre-commit](https://pre-commit.com/). To install pre-commit into your local Git repository, run:
+Code must pass `flake8`, `black`, `isort`, `mypy` and other checks before being committed. This is enforced using [pre-commit](https://pre-commit.com/). To install pre-commit into your local Git repository, run:
 
 ```bash
 pre-commit install
@@ -138,6 +138,16 @@ poetry install
 
 You can use any editor, but there are common settings for VSCode in [.vscode/settings.json](.vscode/settings.json) that should be automatically picked up by VSCode.
 
+A list of recommended plugins is located at [.vscode/extensions.json](.vscode/extensions.json). You can install them by running:
+
+```bash
+cat .vscode/extensions.json | jq -r '.recommendations[]' | xargs -L1 code --install-extension
+```
+
+#### AWS Toolkit for VSCode
+
+This project uses the [AWS Toolkit for VSCode](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-toolkit.html#setup-prereq). You will need to configure it with your AWS credentials.
+
 ## Project Structure
 
 There are seven phases to this project. I will attempt to perform all seven in the next week.
@@ -146,7 +156,7 @@ There are seven phases to this project. I will attempt to perform all seven in t
 2) Setup SageMaker profiles and start a notebook
 3) Perform exploratory data analysis of the IoT data
 4) Develop a baseline anomaly detection model
-5) Iteratively improve and tune the model 
+5) Iteratively improve and tune the model
 6) Deploy the model using SageMaker
 7) Create a simple Streamlit frontend
 
