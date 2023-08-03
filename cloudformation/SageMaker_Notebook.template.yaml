@@ -130,6 +130,6 @@ Resources:
       InstanceType: ml.g4dn.2xlarge
       NotebookInstanceName: netography-notebook
       RoleArn: !GetAtt ExecutionRole.Arn
-      VolumeSizeInGB: 32
+      VolumeSizeInGB: 64
       LifecycleConfigName: !GetAtt BasicNotebookInstanceLifecycleConfig.NotebookInstanceLifecycleConfigName
       RootAccess: Enabled
