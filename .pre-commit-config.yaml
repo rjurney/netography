@@ -11,6 +11,11 @@ repos:
         entry: flake8
         language: system
         types: [python]
+      - id: seed-isort-config
+        name: seed-isort-config
+        entry: seed-isort-config
+        language: system
+        types: [python]
       - id: isort
         name: isort
         entry: isort
