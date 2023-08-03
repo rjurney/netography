@@ -2,7 +2,6 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: "Basic VPC Setup for Netography Takehome Assignment - based on AWS CloudFormation Sample Template VPC_with_PublicIPs_And_DNS."
 
 Parameters:
-
   SSHLocation:
     Description: Lockdown SSH access to the bastion host (default can be accessed from anywhere)
     Type: String
