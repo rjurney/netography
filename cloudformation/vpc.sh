@@ -48,8 +48,7 @@ case "$ACTION" in
         echo "Deleting stack $STACK_NAME"
         aws cloudformation delete-stack \
             --color 'on' \
-            --stack-name "$STACK_NAME" \
-            --capabilities CAPABILITY_NAMED_IAM
+            --stack-name "$STACK_NAME"
         if [[ $? -ne 0 ]]; then
             echo "Error deleting CloudFormation stack $STACK_NAME"
             exit 1
