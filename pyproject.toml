@@ -49,6 +49,7 @@ boto3-stubs = "^1.28.17"
 types-requests = "^2.31.0.2"
 types-urllib3 = "^1.26.25.14"
 sagemaker = "^2.174.0"
+seed-isort-config = "^2.2.0"
 
 [build-system]
 requires = ["poetry-core"]
