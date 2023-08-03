@@ -14,13 +14,6 @@ if [[ $# -lt 2 ]]; then
     exit 1
 fi
 
-# # Check if the first argument is "create" and no parameters are supplied
-# if [[ $1 == "create" && $# -eq 1 ]]; then
-#     echo "First argument is 'create' and there are no additional parameters."
-# else
-#     echo "The conditions are not met."
-# fi
-
 ACTION=$1
 STACK_NAME=$2
 PARAMETERS=${@:3} # Get all the rest of the arguments as parameter key/value pairs
@@ -29,7 +22,7 @@ MYIP=$(curl -s https://checkip.amazonaws.com)
 
 case "$ACTION" in
     create)
-        echo "Creating CloudFormation stack $STACK_NAME"
+        echo "Creating CloudFormation VPC stack $STACK_NAME"
         aws cloudformation create-stack \
             --color 'on' \
             --stack-name "$STACK_NAME" \
