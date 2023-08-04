@@ -20,7 +20,7 @@ PARAMETERS=${@:3} # Get all the rest of the arguments as parameter key/value pai
 
 case "$ACTION" in
     create)
-        echo "Creating CloudFormation SageMaker stack $STACK_NAME"
+        echo "Creating CloudFormation SageMaker Notebook stack $STACK_NAME"
         aws cloudformation create-stack \
             --color 'on' \
             --stack-name "$STACK_NAME" \
