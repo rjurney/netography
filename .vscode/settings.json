@@ -29,5 +29,36 @@
     "editor.formatOnType": true,
     "yaml.schemas": {
         "https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json": "${workspaceFolder}/cloudformation/*.template.yaml"
-    }
+    },
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!GetAtt",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence",
+        "!Base64"
+    ]
 }
