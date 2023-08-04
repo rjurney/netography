@@ -35,9 +35,9 @@ The classifier should be able to generate robust classification metrics on a hel
 >
 > -Dave
 
-## Project Dataset
+## Project Dataset - CSV to Parquet
 
-The dataset is a GZip compressed CSV file. Parquet files perform much better at the scale of this dataset, so I converted it to Parquet format in [netography_iot_anomaly/csv_to_parquet.py](netography_iot_anomaly/csv_to_parquet.py).
+The datasets are GZip compressed CSV files. Parquet files perform much better at the scale of this dataset, so I converted it to Parquet format in [netography_iot_anomaly/csv_to_parquet.py](netography_iot_anomaly/csv_to_parquet.py).
 
 The original CSV/GZip files are:
 
@@ -93,7 +93,7 @@ Then install the poetry dependencies to the `netography` conda environment.
 
 ### Pre-Commit
 
-Code must pass `flake8`, `black`, `isort`, `mypy` and other checks before being committed. This is enforced using [pre-commit](https://pre-commit.com/). To install pre-commit into your local Git repository, run:
+Code must pass `flake8`, `black`, `isort`, `mypy`, `beautysh`, `jq`, `yq` and other checks before being committed. This is enforced using [pre-commit](https://pre-commit.com/). To install pre-commit into your local Git repository, run:
 
 ```bash
 pre-commit install
@@ -138,13 +138,15 @@ poetry install
 
 You can use any editor, but there are common settings for VSCode in [.vscode/settings.json](.vscode/settings.json) that should be automatically picked up by VSCode.
 
+There are some extra YAML tags in the settings file to help in parsing CloudFormation templates with bash scripts without errors.
+
+#### Recommended Plugins
+
 A list of recommended plugins is located at [.vscode/extensions.json](.vscode/extensions.json). You can install them by running:
 
 ```bash
 cat .vscode/extensions.json | jq -r '.recommendations[]' | xargs -L1 code --install-extension
 ```
-
-#### AWS Toolkit for VSCode
 
 This project uses the [AWS Toolkit for VSCode](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-toolkit.html#setup-prereq). You will need to configure it with your AWS credentials.
 
@@ -166,9 +168,23 @@ When time permits, I like to setup my infrastructure using DevOps principles fro
 
 I started with the template for `us-west-2` for [`VPC_With_PublicIPs_And_DNS.template`](https://s3.us-west-2.amazonaws.com/cloudformation-templates-us-west-2/VPC_With_PublicIPs_And_DNS.template). It was in JSON, so I converted it to YAML. The result is [cloudformation/VPC_With_PublicIPs_And_DNS.template.yaml](cloudformation/VPC_With_PublicIPs_And_DNS.template.yaml).
 
+To create a base VPC with private and public subnets, run:
+
+```bash
+cloudformation/vpc.sh create vpc-stack
+```
+
 ### 2. Setup SageMarker Notebooks
 
-I have a dual GPU deep learning machine at home but there is overlap between SageMaker notebook setup and the MLOps profile for model deployment. I decided to use a SageMaker notebook and worked across the documentation and some examples to extend the VPC CloudFormation template to create a SageMaker Notebook along with the IAM role required.
+I have a dual GPU deep learning machine at home but there is overlap between SageMaker notebook setup and the MLOps profile for model deployment. I decided to use a SageMaker notebook and worked across the documentation and some examples to create a customer SageMaker Notebook for the project. The CloudFormation tempalte for the notebook sets up my git user config, a one-hour idle shutdown timer, JupyterLab is setup to contain a custom `netography` conda / ipykernel, this repository is cloned from Github using a secret in SecretsManager and poetry is installed as are the project's poetry dependencies. I was playing around, having fun with it and learning.
+
+Check out the file [cloudformation/SageMaker_Notebook.template.yaml](cloudformation/SageMaker_Notebook.template.yaml) to see how this works. It was fun! :)
+
+To create the custom SageMaker notebook, run:
+
+```bash
+cloudformation/notebook.sh create notebook-stack
+```
 
 ### 3. Exploratory Data Analysis
 
