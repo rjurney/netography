@@ -29,9 +29,9 @@ The classifier should be able to generate robust classification metrics on a hel
 >
 > We will use a held-out test set to evaluate your model's performance.
 >
-> Test data can be found here: https://github.com/netography/ml-engineer/archive/refs/heads/main.zip
+> Test data can be found here: [https://github.com/netography/ml-engineer/archive/refs/heads/main.zip](https://github.com/netography/ml-engineer/archive/refs/heads/main.zip)
 >
-> It can also be found here: https://www.dropbox.com/scl/fi/oz1fspqu4mago3wxeb9dp/IoT-network-intrustion-dataset-train.csv?rlkey=d6hblxlw4t163tt386w16gldi&dl=0
+> It can also be found here: [https://www.dropbox.com/scl/fi/oz1fspqu4mago3wxeb9dp/IoT-network-intrustion-dataset-train.csv?rlkey=d6hblxlw4t163tt386w16gldi&dl=0](https://www.dropbox.com/scl/fi/oz1fspqu4mago3wxeb9dp/IoT-network-intrustion-dataset-train.csv?rlkey=d6hblxlw4t163tt386w16gldi&dl=0)
 >
 > -Dave
 
@@ -202,7 +202,7 @@ I always create a baseline model first to compare with more sophisticated models
 
 ### 6. Deploy the Model on SageMaker
 
-I will extend the AWS network and SageMaker notebook setup from steps 1 and 2 to create an MLOps profile and deploy a model using SageMaker to perform inference at an API endpoint.
+This looks easy with the [SageMaker Python SDK](https://sagemaker.readthedocs.io/en/stable/), as indicated in [this tutorial](https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html) ...
 
 ### 7. Steamlit Frontend
 
