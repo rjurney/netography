@@ -37,7 +37,7 @@ The classifier should be able to generate robust classification metrics on a hel
 
 ## Project Dataset - CSV to Parquet
 
-The datasets are GZip compressed CSV files. Parquet files perform much better at the scale of this dataset, so I converted it to Parquet format in [netography_iot_anomaly/csv_to_parquet.py](netography_iot_anomaly/csv_to_parquet.py).
+The datasets are GZip compressed CSV files. Parquet files perform much better at the scale of this dataset, so I converted it to Parquet format in [netography/csv_to_parquet.py](netography/csv_to_parquet.py).
 
 The original CSV/GZip files are:
 
@@ -67,7 +67,7 @@ aws-cli/2.12.7 Python/3.11.4 Darwin/22.4.0 exe/x86_64 prompt/off
 
 ### Docker
 
-Docker is used to build a notebook container for local work and the SageMaker container(s). The Dockerfile is in [netography_iot_anomaly/Dockerfile](netography_iot_anomaly/Dockerfile). It is orchestrated locally using [docker-compose.yml](docker-compose.yml).
+Docker is used to build a notebook container for local work and the SageMaker container(s). The Dockerfile is in [netography/Dockerfile](netography/Dockerfile). It is orchestrated locally using [docker-compose.yml](docker-compose.yml).
 
 ```bash
 docker compose up -d

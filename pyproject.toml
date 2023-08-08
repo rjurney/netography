@@ -4,7 +4,7 @@ version = "0.0.3"
 description = "This project is a coding challenge from Netography assigned to candidate Russell Jurney."
 authors = ["Russell Jurney <russell.jurney@gmail.com>"]
 packages = [
-    { include = "netography_iot_anomaly" }
+    { include = "netography" }
 ]
 license = "MIT"
 readme = "README.md"
@@ -64,15 +64,15 @@ build-backend = "poetry.core.masonry.api"
 [tool.black]
 line-length = 120
 target-version = ['py310']
-include = ['netography_iot_anomaly', 'tests']
+include = ['netography', 'tests']
 
 [tool.isort]
 profile = "black"
-src_paths = ["netography_iot_anomaly", "tests"]
+src_paths = ["netography", "tests"]
 
 [tool.mypy]
 python_version = "3.10"
-mypy_path = ["netography_iot_anomaly", "tests"]
+mypy_path = ["netography", "tests"]
 warn_return_any = true
 warn_unused_configs = true
 warn_redundant_casts = true
