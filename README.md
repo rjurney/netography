@@ -76,6 +76,24 @@ docker logs netography-jupyter -f --tail 100
 
 You will see the URL to connect to with an access token provided in the logs.
 
+#### Docker Environment Variables
+
+The following files are used in Docker:
+
+```bash
+envs/graphistry.env
+envs/wandb.env # unused
+.env
+```
+
+Though these are ignored, if you edit them git will complain and want to commit them. Use this command to ignore commits:
+
+
+```bash
+git update-index --assume-unchanged envs/graphistry.env
+git update-index --assume-unchanged .env
+```
+
 ### Python 3.10
 
 Netography is a Go shop, but I will be using Python for all phases of this project. The reason for this is that there is a lot to do, so I am deferring learning Go until the onboarding phase of my hiring. I have familiarized myself with Go's features and look forward to doing so :)
