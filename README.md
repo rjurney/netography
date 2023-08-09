@@ -8,16 +8,10 @@
 
 This project is a coding challenge from Netography assigned to candidate Russell Jurney.
 
-## Assignment Email
+## Assignment
 
 This email was received from David Meltzer on July 6, 2023 at 8:59AM PST. I began work at 6:00PM that day.
 
-> Hi Russell,
->
-> As I mentioned last week, the challenge is the last step in our interview process.  I have provided the instructions below, but if you need any clarification or have problems with how we have defined this, please let us know.  To the extent you incur any AWS costs as part of this, we will reimburse you.  There is no fixed deadline for this, but we are hoping to have it back within the next week or so to be able to make a decision.
->
-> ----
->
 > Use the IOT intrusion detection dataset for a supervised anomaly detection task. The label column indicates whether each row's data is normal or anomalous.
 You can choose an ML classifier for training on this dataset.
 >
@@ -32,8 +26,6 @@ The classifier should be able to generate robust classification metrics on a hel
 > Test data can be found here: [https://github.com/netography/ml-engineer/archive/refs/heads/main.zip](https://github.com/netography/ml-engineer/archive/refs/heads/main.zip)
 >
 > It can also be found here: [https://www.dropbox.com/scl/fi/oz1fspqu4mago3wxeb9dp/IoT-network-intrustion-dataset-train.csv?rlkey=d6hblxlw4t163tt386w16gldi&dl=0](https://www.dropbox.com/scl/fi/oz1fspqu4mago3wxeb9dp/IoT-network-intrustion-dataset-train.csv?rlkey=d6hblxlw4t163tt386w16gldi&dl=0)
->
-> -Dave
 
 ## Project Dataset - CSV to Parquet
 
