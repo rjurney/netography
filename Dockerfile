@@ -4,9 +4,6 @@ FROM jupyter/scipy-notebook:python-3.10.11
 # Work in the jovyan user's home directory
 WORKDIR "/home/${NB_USER}"
 
-# Make RUN commands use `bash --login`:
-# SHELL ["/bin/bash", "--login", "-c"]
-
 # Needed for poetry package management: no venv, latest poetry, GRANT_SUDO don't work :(
 ENV POETRY_VIRTUALENVS_CREATE=false \
     POETRY_VERSION=1.4.2 \
