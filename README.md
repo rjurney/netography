@@ -170,7 +170,6 @@ There are seven phases to this project. I will attempt to perform all seven in t
 4) Develop a baseline anomaly detection model
 5) Iteratively improve and tune the model
 6) Deploy the model using SageMaker
-7) Create a simple Streamlit frontend
 
 ### 1. Setup a Clean VPC with CloudFormation
 
@@ -196,11 +195,9 @@ To create the custom SageMaker notebook, run:
 cloudformation/notebook.sh create notebook-stack
 ```
 
-### 3. Exploratory Data Analysis
+### 3. Exploratory Data Analysis + 4. Baseline Anomaly Detection Model
 
-I can't model what I don't understand. In this phase I will explore the data to determine how best to model it. See [Exploratory Data Analysis.ipynb](Exploratory Data Analysis.ipynb) for this. I examind the data variously and played with it in Graphistry.
-
-### 4. Baseline Anomaly Detection Model
+I can't model what I don't understand. In this phase I will explore the data to determine how best to model it. See [Exploratory Data Analysis.ipynb](https://github.com/rjurney/netography/blob/main/Exploratory%20Data%20Analysis.ipynb) for this. I examind the data variously and played with it in Graphistry.
 
 I always create a baseline model first to compare with more sophisticated models and determine if time spent refining them is well spent. Exploratory data analysis will indicate what baseline model to begin with. The goal is to build a model that works, although poor performance is tolerable at this stage.
 
@@ -213,10 +210,6 @@ I always create a baseline model first to compare with more sophisticated models
 ### 6. Deploy the Model on SageMaker
 
 This looks easy with the [SageMaker Python SDK](https://sagemaker.readthedocs.io/en/stable/), as indicated in [this tutorial](https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html) ...
-
-### 7. Steamlit Frontend
-
-[Streamlit](https://streamlit.io/) makes it so easy to build Pythonic web frontends for Python models in order to give them a human face that it is a shame not to whip something up if I have time :) This will be as simple as possible. I will have to evaluate this step versus SageMaker's own capabilities.
 
 ## About the Author - Russell Jurney
 
