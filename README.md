@@ -197,9 +197,11 @@ cloudformation/notebook.sh create notebook-stack
 
 ### 3. Exploratory Data Analysis + 4. Baseline Anomaly Detection Model
 
-I can't model what I don't understand. In this phase I will explore the data to determine how best to model it. See [Exploratory Data Analysis.ipynb](https://github.com/rjurney/netography/blob/main/Exploratory%20Data%20Analysis.ipynb) for this. I examind the data variously and played with it in Graphistry.
+I can't model what I don't understand. In this phase I will explore the data to determine how best to model it. I examind the data variously and played with it in Graphistry.
 
 I always create a baseline model first to compare with more sophisticated models and determine if time spent refining them is well spent. Exploratory data analysis will indicate what baseline model to begin with. The goal is to build a model that works, although poor performance is tolerable at this stage.
+
+See [Exploratory Data Analysis.ipynb](https://github.com/rjurney/netography/blob/main/Exploratory%20Data%20Analysis.ipynb) for these steps.
 
 ### 5. Iteratively Improve and Tune the Model
 
