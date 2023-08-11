@@ -6,7 +6,7 @@
     </a>
 </p>
 
-This project is a coding challenge from Netography assigned to candidate Russell Jurney.
+This project is a coding challenge from Netography assigned to candidate Russell Jurney. I used this to learn to work with network flow logs as well as to apply.
 
 ## Assignment
 
@@ -174,7 +174,7 @@ There are seven phases to this project. I will attempt to perform all seven in t
 
 ### 1. Setup a Clean VPC with CloudFormation
 
-When time permits, I like to setup my infrastructure using DevOps principles from the beginning of a project. I like CloudFormation for AWS DevOps over Terraform because Terraform has interfaces that vary widely across clouds, creating duplicate work. I am familiar with Terraform but that is not an issue in this project so I chose CloudFormation.
+This turned out not to be needed. When time permits, I like to setup my infrastructure using DevOps principles from the beginning of a project. I like CloudFormation for AWS DevOps over Terraform because Terraform has interfaces that vary widely across clouds, creating duplicate work. I am familiar with Terraform but that is not an issue in this project so I chose CloudFormation.
 
 I started with the template for `us-west-2` for [`VPC_With_PublicIPs_And_DNS.template`](https://s3.us-west-2.amazonaws.com/cloudformation-templates-us-west-2/VPC_With_PublicIPs_And_DNS.template). It was in JSON, so I converted it to YAML. The result is [cloudformation/VPC_With_PublicIPs_And_DNS.template.yaml](cloudformation/VPC_With_PublicIPs_And_DNS.template.yaml).
 
@@ -184,7 +184,7 @@ To create a base VPC with private and public subnets, run:
 cloudformation/vpc.sh create vpc-stack
 ```
 
-### 2. Setup SageMarker Notebooks
+### 2. Setup SageMaker Notebooks
 
 I have a dual GPU deep learning machine at home but there is overlap between SageMaker notebook setup and the MLOps profile for model deployment. I decided to use a SageMaker notebook and worked across the documentation and some examples to create a customer SageMaker Notebook for the project. The CloudFormation tempalte for the notebook sets up my git user config, a one-hour idle shutdown timer, JupyterLab is setup to contain a custom `netography` conda / ipykernel, this repository is cloned from Github using a secret in SecretsManager and poetry is installed as are the project's poetry dependencies. I was playing around, having fun with it and learning.
 
@@ -198,7 +198,7 @@ cloudformation/notebook.sh create notebook-stack
 
 ### 3. Exploratory Data Analysis
 
-I can't model what I don't understand. In this phase I will explore the data to determine how best to model it.
+I can't model what I don't understand. In this phase I will explore the data to determine how best to model it. See [Exploratory Data Analysis.ipynb](Exploratory Data Analysis.ipynb) for this. I examind the data variously and played with it in Graphistry.
 
 ### 4. Baseline Anomaly Detection Model
 
